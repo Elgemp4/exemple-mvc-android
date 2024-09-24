@@ -3,6 +3,25 @@
     <string name="question_australia">Canberra est la capitale de l’Australie.</string>
     <string name="question_oceans">L’océan Pacifique est plus large que l’océan Atlantique.</string>
     <string name="question_mideast">Le canal de Suez relie la mer rouge et l’océan Indien.</string>
+    <string name="question_everest">Le Mont Everest est le plus haut sommet du monde.</string>
+    <string name="question_africa">Le Nil est le fleuve le plus long d\'Afrique.</string>
+    <string name="question_asia">Tokyo est la plus grande ville du Japon.</string>
+
+    <string name="question_revolution_francaise">La Révolution française a commencé en 1789.</string>
+    <string name="question_guerre_froide">La guerre froide a opposé les États-Unis et l\'Union soviétique.</string>
+    <string name="question_rome">L\'Empire romain s\'est effondré en 543 après J.-C.</string>
+    <string name="question_deuxieme_guerre">La Deuxième Guerre mondiale a pris fin en 1948.</string>
+    <string name="question_napoleon">Napoléon Bonaparte a été couronné empereur en 1804.</string>
+    <string name="question_renaissance">La Renaissance a débuté en Italie au XIIIe siècle.</string>
+
+    <string name="question_star_wars">Le premier film Star Wars est sorti en 1977.</string>
+    <string name="question_superman">Superman vient de la planète Crypto.</string>
+    <string name="question_marvel">Iron Man ne fait pas partie de l\'univers Marvel.</string>
+    <string name="question_harry_potter">Harry Potter a étudié à l\'école de magie de Poudlard.</string>
+    <string name="question_pokemon">Pikachu est un Pokémon de type électrique.</string>
+    <string name="question_lotr">Le Seigneur des Anneaux a été écrit par J.R.R. Tolkien.</string>
+
+
     <string name="true_button">Vrai</string>
     <string name="false_button">Faux</string>
     <string name="good_answer">Correct !</string>
@@ -18,4 +37,10 @@
     <string name="cheat_button">Tricher</string>
     <string name="answer_has_been_shown">La réponse a été montrée, sale tricheur !</string>
     <string name="cheat_count">Triche : %1$d / %2$d</string>
+
+    <string name="geography_button">Géographie</string>
+    <string name="history_button">Histoire</string>
+    <string name="geek_button">Culture Geek</string>
+    <string name="launch_button">Lancer le quiz</string>
+    <string name="title_text">Choisissez une catégorie</string>
 </resources>

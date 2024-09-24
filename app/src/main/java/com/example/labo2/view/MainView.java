@@ -20,8 +20,6 @@ public class MainView extends View<MainView.Listener> {
     private TextView mScoreTextView;
     private TextView mCheatCountTextView;
 
-
-
     public MainView(AppCompatActivity activity) {
         super(activity);
         findComponents();
@@ -81,6 +79,34 @@ public class MainView extends View<MainView.Listener> {
         mCheatButton.setOnClickListener((v) -> {
             mListener.cheat();
         });
+    }
+
+    public void disableCheatButton() {
+        mCheatButton.setEnabled(false);
+    }
+
+    public void enableCheatButton() {
+        mCheatButton.setEnabled(true);
+    }
+
+    public void disableNavigationButtons() {
+        mNextButton.setEnabled(false);
+        mPreviousButton.setEnabled(false);
+    }
+
+    public void enableNavigationButtons() {
+        mNextButton.setEnabled(true);
+        mPreviousButton.setEnabled(true);
+    }
+
+    public void disableAnswerButtons() {
+        mTrueButton.setEnabled(false);
+        mFalsebButton.setEnabled(false);
+    }
+
+    public void enableAnswerButtons() {
+        mTrueButton.setEnabled(true);
+        mFalsebButton.setEnabled(true);
     }
 
     public interface Listener {

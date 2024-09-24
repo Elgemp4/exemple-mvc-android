@@ -49,4 +49,8 @@ public class Question implements Serializable {
     public boolean hasCheated() {
         return mHasCheated;
     }
+
+    public boolean hasAnswered() {
+        return mAnsweredCorrectly != null;
+    }
 }

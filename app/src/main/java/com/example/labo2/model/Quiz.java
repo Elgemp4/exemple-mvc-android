@@ -8,11 +8,11 @@ public class Quiz implements Serializable {
 
     private int mCurrentIndex = 0;
 
-    private Question[] mQuestionBank = new Question[] {
-            new Question(R.string.question_australia, true),
-            new Question(R.string.question_oceans, true),
-            new Question(R.string.question_mideast, false),
-    };
+    private Question[] mQuestionBank;
+
+    public Quiz(Question[] questions) {
+        mQuestionBank = questions;
+    }
 
     public void changeQuestion(int direction)
     {
@@ -57,6 +57,20 @@ public class Quiz implements Serializable {
 
     public boolean getAnswer() {
         return mQuestionBank[mCurrentIndex].getAnswerTrue();
+    }
+
+    public boolean hasAnswered() {
+        return mQuestionBank[mCurrentIndex].hasAnswered();
+    }
+
+    public boolean isQuizFinished() {
+        for (Question question : mQuestionBank) {
+            if (!question.hasAnswered()) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public void setCheated(boolean cheated) {
