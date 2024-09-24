@@ -1,16 +1,14 @@
 package com.example.labo2.view;
 
-import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.labo2.R;
-import com.example.labo2.controller.CheatActivity;
-import com.example.labo2.model.Quiz;
 
-public class MainView extends View {
+public class MainView extends View<MainView.Listener> {
     private Button mTrueButton;
     private Button mFalsebButton;
     private Button mPreviousButton;
@@ -22,28 +20,23 @@ public class MainView extends View {
     private TextView mScoreTextView;
     private TextView mCheatCountTextView;
 
-    private Listerner listener;
-
-    private AppCompatActivity mActivity;
 
 
     public MainView(AppCompatActivity activity) {
         super(activity);
-        this.mActivity = activity;
         findComponents();
         registerListeners();
     }
 
-    @Override
-    public void refresh() {
-        mScoreTextView.setText(mActivity.getString(R.string.score, listener.getScore(), listener.getQuestionCount()));
-        mCheatCountTextView.setText(mActivity.getString(R.string.cheat_count, listener.getCheatCount(), listener.getQuestionCount()));
-        mQuestionTextView.setText(listener.getQuestionText());
+    public void showMessage(CharSequence message) {
+        Toast.makeText(mActivity, message, Toast.LENGTH_SHORT).show();
     }
 
-    public void setListener(Listerner listerner) {
-        this.listener = listerner;
-        refresh();
+    @Override
+    public void refresh() {
+        mScoreTextView.setText(mActivity.getString(R.string.score, mListener.getScore(), mListener.getQuestionCount()));
+        mCheatCountTextView.setText(mActivity.getString(R.string.cheat_count, mListener.getCheatCount(), mListener.getQuestionCount()));
+        mQuestionTextView.setText(mListener.getQuestionText());
     }
 
     @Override
@@ -66,31 +59,31 @@ public class MainView extends View {
 
     private void registerListeners(){
         mTrueButton.setOnClickListener((v) -> {
-            listener.setResponse(true);
+            mListener.setResponse(true);
         });
 
         mFalsebButton.setOnClickListener((v) -> {
-            listener.setResponse(false);
+            mListener.setResponse(false);
         });
 
         mNextButton.setOnClickListener((v) -> {
-            listener.changeQuestion(1);
+            mListener.changeQuestion(1);
         });
 
         mPreviousButton.setOnClickListener((v) -> {
-            listener.changeQuestion(-1);
+            mListener.changeQuestion(-1);
         });
 
         mResetButton.setOnClickListener((v) -> {
-            listener.resetQuiz();
+            mListener.resetQuiz();
         });
 
         mCheatButton.setOnClickListener((v) -> {
-            listener.cheat();
+            mListener.cheat();
         });
     }
 
-    public interface Listerner{
+    public interface Listener {
         int getQuestionCount();
         int getScore();
         int getCheatCount();

@@ -8,8 +8,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.labo2.R;
 
-public abstract class View {
+public abstract class View<T> {
+    protected T mListener;
+    protected AppCompatActivity mActivity;
+
     public View(AppCompatActivity activity) {
+        mActivity = activity;
         EdgeToEdge.enable(activity);
         activity.setContentView(getLayout());
 
@@ -18,6 +22,11 @@ public abstract class View {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void setListener(T listener) {
+        mListener = listener;
+        refresh();
     }
 
     public abstract void refresh();

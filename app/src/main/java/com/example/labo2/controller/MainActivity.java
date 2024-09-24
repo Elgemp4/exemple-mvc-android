@@ -13,8 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.labo2.R;
 import com.example.labo2.model.Quiz;
 import com.example.labo2.view.MainView;
+import com.example.labo2.view.View;
 
-public class MainActivity extends AppCompatActivity implements MainView.Listerner {
+public class MainActivity extends AppCompatActivity implements MainView.Listener {
 
     private MainView mView;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements MainView.Listerne
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
             if(result.getResultCode() == RESULT_OK && result.getData() != null){
-                Toast.makeText(this, R.string.answer_has_been_shown, Toast.LENGTH_SHORT).show();
+                mView.showMessage(getString(R.string.answer_has_been_shown));
                 mQuiz.setCheated(true);
                 mView.refresh();
             }
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements MainView.Listerne
         } else {
             messageResId = R.string.wrong_answer;
         }
-        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show();
+        mView.showMessage(getString(messageResId));
     }
 
 
