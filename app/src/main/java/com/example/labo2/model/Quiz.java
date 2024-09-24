@@ -14,19 +14,10 @@ public class Quiz implements Serializable {
             new Question(R.string.question_mideast, false),
     };
 
-    private void changeIndex(int direction)
+    public void changeQuestion(int direction)
     {
         mCurrentIndex = (mCurrentIndex + direction + mQuestionBank.length) % mQuestionBank.length;
     }
-
-    public void nextQuestion() {
-        changeIndex(1);
-    }
-
-    public void previousQuestion() {
-        changeIndex(-1);
-    }
-
 
     public int getQuestionText() {
         return mQuestionBank[mCurrentIndex].getTextResId();

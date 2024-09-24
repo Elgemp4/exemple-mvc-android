@@ -20,6 +20,7 @@ public abstract class View {
         });
     }
 
+    public abstract void refresh();
 
     protected abstract int getLayout();
 }
