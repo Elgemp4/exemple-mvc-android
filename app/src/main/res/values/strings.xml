@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Labo2</string>
+    <string name="question_australia">Canberra est la capitale de l’Australie.</string>
+    <string name="question_oceans">L’océan Pacifique est plus large que l’océan Atlantique.</string>
+    <string name="question_mideast">Le canal de Suez relie la mer rouge et l’océan Indien.</string>
+    <string name="true_button">Vrai</string>
+    <string name="false_button">Faux</string>
+    <string name="good_answer">Correct !</string>
+    <string name="wrong_answer">Incorrect !</string>
+    <string name="next_button">Next</string>
+    <string name="previous_button">Previous</string>
+    <string name="score">Score : %1$d / %2$d</string>
+    <string name="reset_text">Reset</string>
+    <string name="warning_text">Êtes vous sûr de vouloir tricher ?</string>
+    <string name="cheat_reveal_text">La réponse est : %1$s</string>
+    <string name="show_answer_button">Oui :D</string>
+
+    <string name="cheat_button">Tricher</string>
+    <string name="answer_has_been_shown">La réponse a été montrée, sale tricheur !</string>
+    <string name="cheat_count">Triche : %1$d / %2$d</string>
+</resources>
